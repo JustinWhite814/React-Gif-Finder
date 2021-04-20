@@ -8,7 +8,7 @@ function SearchHeader({ lastSearch }) {
         <h1>Giphy Searcher</h1>
         </div>
         <p className='muted'>
-            Show results for <strong>{lastSearch}</strong>
+                Showing results for <strong>{lastSearch}</strong>
         </p>
         </header>
     );

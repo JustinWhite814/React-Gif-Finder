@@ -11,7 +11,7 @@ useEffect(()=> {
 let imageElements = img.map(img => {
 return (
          <div key={img.id} className="gif">
-         <img src={img.images.downsized_large.url} alt={img.title}/>
+         <img src={img.images.downsized_large.url} alt={img.title} />
          </div>
 );
 }) 
