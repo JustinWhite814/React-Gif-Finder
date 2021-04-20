@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react'
+
 import { SearchIcon } from '../shared/AppIcons'
 function SearchForm({handleSubmit, handleChange, searchString}) {
     return (
@@ -12,7 +12,7 @@ function SearchForm({handleSubmit, handleChange, searchString}) {
                  onChange={handleChange}
                  value={searchString}
                  />
-                <button type='submit'><SearchIcon height="2rem" width="2rem" /></button>
+                <button type='submit'><SearchIcon height="1.4rem" width="1.2rem" /></button>
                 
             </form>
         </div>

@@ -105,6 +105,7 @@ input:hover {
 .form-horizontal {
   align-items: center;
   display: flex;
+  width: 50rem
 }
 
 /* Add a media query to add more space between
