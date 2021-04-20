@@ -13,6 +13,7 @@ function SearchForm({handleSubmit, handleChange, searchString}) {
                  value={searchString}
                  />
                 <button type='submit'><SearchIcon height="2rem" width="2rem" /></button>
+                
             </form>
         </div>
     );

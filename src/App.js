@@ -94,6 +94,7 @@ fetch(url)
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         searchString={searchString}
+        
         />
         <SearchResults imageData={images}/>
       </header>
