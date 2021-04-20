@@ -2,7 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import SearchForm from './Components/SearchForm'
 import SearchResults from "./Components/SearchResults"
+import SearchHeader from './Components/SearchHeader'
 import './App.css';
+
 
 // const images = [
 //   {
@@ -42,6 +44,8 @@ import './App.css';
 
 
 function App() {
+
+ const [lastSearch, setLastSearch] = useState('');
  const searchOptions = {
    key: 'HyPHqefoiTwyVKXaCF4bK5JJoUU2Rn16',
    limit: 25,
@@ -51,28 +55,33 @@ function App() {
  }
  const[images, setImages] = useState([])
  const [searchString, setSearchString] = useState('')
+ 
  const handleChange = (e) => {
    setSearchString(e.target.value)
  }
+
  const handleSubmit =(e) => {
    e.preventDefault();
-   getImages()
+   getImages(searchString)
  }
- const getImages = () => {
-  
-  const url = `${searchOptions.api}${searchOptions.endpoint}?api_key=${searchOptions.key}&q=${searchString} &limit=${searchOptions.limit}&offset=${searchOptions.offset}&rating=${searchOptions.rating}&lang=en`
 
-  fetch(url)
+const getImages = (searchString) => {
+const url = `${searchOptions.api}${searchOptions.endpoint}
+?api_key=${searchOptions.key}&q=${searchString} &limit=${searchOptions.limit}
+&offset=${searchOptions.offset}&rating=${searchOptions.rating}&lang=en`
+fetch(url)
 .then(response => response.json())
 .then(data => {
   setImages(data.data)
+  setLastSearch(searchString)
+  setSearchString('')
 })
 .catch(console.error)
  }
  
 
  useEffect(()=> {
-   getImages();
+   getImages(searchString);
  }, [])
 
 
@@ -80,7 +89,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Giphy Searcher</h1>
+        <SearchHeader lastSearch={lastSearch} />
         <SearchForm 
         handleChange={handleChange}
         handleSubmit={handleSubmit}

@@ -17,7 +17,7 @@ return (
 }) 
 return (
     <div className='gallery'>
-        {imageElements} {console.log(img)}
+        {imageElements} 
     </div>
 )
 }

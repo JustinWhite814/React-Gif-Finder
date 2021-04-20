@@ -14,8 +14,20 @@ img {
   --secondary: #ff7f50;
   --secondary-light: #ffa483;
   --white: #fff;
+  --muted: #a1a1a1
 }
-
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+h1,p{
+  margin: 0;
+}
+.muted {
+  color: var (--muted);
+}
 /* Remove the body margin */
 body {
   font-family: sans-serif;
@@ -23,7 +35,24 @@ body {
   margin: 0;
   padding: 0 1rem;
 }
+.brand {
+  align-items: center;
+  display: flex;
+  width: auto;
+}
 
+.brand img {
+  height: 2rem;
+  margin: 0 0.5rem 0 0;
+  width: auto;
+}
+
+.brand h1 {
+  font-weight: 200;
+  letter-spacing: -1px;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
 /* Style the button and tell it not to grow */
 button {
   background-color: var(--primary);
@@ -107,5 +136,11 @@ the button and input when the browser is at least
 @media (min-width: 1400px) {
   .gallery {
     column-count: 4;
+  }
+}
+@media (min-width: 1000px){
+  header {
+    align-items: center;
+    flex-direction: row;
   }
 }
