@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Another General Assembly Lab 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was made so that we could learn how to create forms that connect to an API. This is the react Gif finder. There was a search bar attached to it and we would use a random GIF API to yield results and then display them on screen. 
 
 ## Available Scripts
 
